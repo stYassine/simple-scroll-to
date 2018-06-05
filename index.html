@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    section.section{
+        position:relative;
+        height:100vh;
+        background: #ddd;
+        text-align: center;
+    }
+    section.section p{
+        line-height: 50vh;
+        font-size:40px;
+    }
+    
+    ul{}
+    ul li{
+        display: inline-block;
+        padding:5px 10px;
+    }
+    ul li a{}
+    
+</style>
+<body>
+    
+    <ul>
+        <li><a href="#">Section 1</a></li>
+        <li><a href="#">Section 2</a></li>
+        <li><a href="#">Section 3</a></li>
+        <li><a href="#">Section 4</a></li>
+        <li><a href="#" id="contactSection">Section 5</a></li>
+    </ul>
+    
+    <section class="section section_1">
+        <p>Section 1</p>
+    </section>
+    
+    <section class="section section_2">
+        <p>Section 2</p>
+    </section>
+    
+    <section class="section section_3">
+        <p>Section 3</p>
+    </section>
+    
+    <section class="section section_4">
+        <p>Section 4</p>
+    </section>
+    
+    <section class="section section_5">
+        <p>Section 5</p>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $("#contactSection").on('click', function(evt){
+                evt.preventDefault();
+                
+                var contact_section =$('.section_5');
+                var contact_section_offset =contact_section.offset().top;
+                
+                
+                $('html, body').animate({scrollTop: contact_section_offset}, 500);
+                
+                
+            });
+            
+        });
+    </script>
+</body>
+</html>
